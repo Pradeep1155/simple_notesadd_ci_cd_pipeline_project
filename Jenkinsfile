@@ -14,13 +14,15 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
+        stage('Build Image') {
             steps {
-                sh "docker build -t ${IMAGE_NAME}:${IMAGE_TAG} ."
+                sh '''
+                podman build -t ${IMAGE_NAME}:${IMAGE_TAG} .
+                '''
             }
         }
 
-        stage('Docker Login') {
+        stage('Login to Docker Hub') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub',
@@ -28,28 +30,32 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
-                        echo "$DOCKER_PASS" | docker login -u "$DOCKER_USER" --password-stdin
+                    echo "$DOCKER_PASS" | podman login docker.io -u "$DOCKER_USER" --password-stdin
                     '''
                 }
             }
         }
 
-        stage('Push Docker Image') {
+        stage('Push Image') {
             steps {
-                sh "docker push ${IMAGE_NAME}:${IMAGE_TAG}"
+                sh '''
+                podman push ${IMAGE_NAME}:${IMAGE_TAG}
+                '''
             }
         }
     }
 
     post {
+        always {
+            sh 'podman logout docker.io || true'
+        }
+
         success {
             echo 'Pipeline completed successfully!'
         }
+
         failure {
             echo 'Pipeline failed!'
-        }
-        always {
-            sh 'docker logout || true'
         }
     }
 }
