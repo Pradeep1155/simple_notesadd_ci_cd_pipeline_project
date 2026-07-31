@@ -2,13 +2,11 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = "pradeep1155/notes-app"
-        IMAGE_TAG  = "v1"
+        IMAGE_NAME = "pradeep1155/notes-app:v1"
     }
 
     stages {
-
-        stage('Checkout Source Code') {
+        stage('Checkout') {
             steps {
                 checkout scm
             }
@@ -16,13 +14,11 @@ pipeline {
 
         stage('Build Image') {
             steps {
-                sh '''
-                podman build -t ${IMAGE_NAME}:${IMAGE_TAG} .
-                '''
+                sh 'sudo podman build -t $IMAGE_NAME .'
             }
         }
 
-        stage('Login to Docker Hub') {
+        stage('Login to DockerHub') {
             steps {
                 withCredentials([usernamePassword(
                     credentialsId: 'dockerhub',
@@ -30,7 +26,7 @@ pipeline {
                     passwordVariable: 'DOCKER_PASS'
                 )]) {
                     sh '''
-                    echo "$DOCKER_PASS" | podman login docker.io -u "$DOCKER_USER" --password-stdin
+                    echo "$DOCKER_PASS" | sudo podman login docker.io -u "$DOCKER_USER" --password-stdin
                     '''
                 }
             }
@@ -38,24 +34,14 @@ pipeline {
 
         stage('Push Image') {
             steps {
-                sh '''
-                podman push ${IMAGE_NAME}:${IMAGE_TAG}
-                '''
+                sh 'sudo podman push $IMAGE_NAME'
             }
         }
-    }
 
-    post {
-        always {
-            sh 'podman logout docker.io || true'
-        }
-
-        success {
-            echo 'Pipeline completed successfully!'
-        }
-
-        failure {
-            echo 'Pipeline failed!'
+        stage('Logout') {
+            steps {
+                sh 'sudo podman logout docker.io || true'
+            }
         }
     }
 }
