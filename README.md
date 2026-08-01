@@ -81,8 +81,8 @@ kubectl get deployments
 kubectl get pods
 kubectl get services
 ```
+![image ALT](https://github.com/Pradeep1155/simple_notesadd_ci_cd_pipeline_project/blob/173931e140277cc917766b016c10acbb44261323/Screenshot%202026-07-31%20212354.png)
 
----
 
 ## Verify the Application
 
