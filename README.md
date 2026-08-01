@@ -90,6 +90,7 @@ Check running pods:
 
 ```bash
 kubectl get pods
+![image ALT](https://github.com/Pradeep1155/simple_notesadd_ci_cd_pipeline_project/blob/ce240b69f9506d1249751d6502eebd6d6dede3f6/Screenshot%202026-07-31%20212039.png)
 ```
 
 Describe deployment:
