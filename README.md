@@ -6,7 +6,7 @@ This project demonstrates how to containerize and deploy a **Node.js Notes Appli
 deployed using Kubernetes Deployments and Services, and can be accessed through a NodePort Service. This project showcases practical DevOps skills including 
 Docker, Kubernetes, Linux, Git, and GitHub.
 
-![image ALT] (https://github.com/Pradeep1155/simple_notesadd_ci_cd_pipeline_project/blob/b213b054eb50993ea6b6845f64582f684914ec84/Screenshot%202026-07-31%20211909.png)
+![image ALT](https://github.com/Pradeep1155/simple_notesadd_ci_cd_pipeline_project/blob/b213b054eb50993ea6b6845f64582f684914ec84/Screenshot%202026-07-31%20211909.png)
 
 ---
 
