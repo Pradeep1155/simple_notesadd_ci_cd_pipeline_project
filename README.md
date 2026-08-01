@@ -5,7 +5,11 @@
 This project demonstrates how to containerize and deploy a **Node.js Notes Application** on a **Kubernetes cluster**. The application is packaged with Docker,
 deployed using Kubernetes Deployments and Services, and can be accessed through a NodePort Service. This project showcases practical DevOps skills including 
 Docker, Kubernetes, Linux, Git, and GitHub.
-![image alt] (Screenshot 2026-07-31 211909.png)
+## 📸 Project Screenshot
+
+![Project Screenshot](## 📸 Project Screenshot
+
+![Project Screenshot]()
 ---
 
 ##  Features
