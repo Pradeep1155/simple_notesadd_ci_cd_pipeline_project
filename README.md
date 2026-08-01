@@ -57,7 +57,10 @@ docker build -t notes-app:v1 .
 Run locally:
 
 ```bash
-docker run -d -p 3000:3000 notes-app:v1
+docker run -d \
+  --name notes-app \
+  -p 8081:8080 \
+  pradeep1155/notes-app:v1
 ```
 
 ---
