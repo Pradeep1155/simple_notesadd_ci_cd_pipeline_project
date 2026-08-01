@@ -148,3 +148,4 @@ Through this project, I learned:
 * Git & GitHub project management
 
 ---
+![image ALT](https://github.com/Pradeep1155/simple_notesadd_ci_cd_pipeline_project/blob/4710863c91c7a3063f30fb5e312ca0e9e42461ba/Screenshot%202026-07-31%20211958.png)
