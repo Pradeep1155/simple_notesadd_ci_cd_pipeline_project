@@ -24,7 +24,6 @@ Docker, Kubernetes, Linux, Git, and GitHub.
 ##  Tech Stack
 
 * Node.js
-* Express.js
 * Docker
 * Kubernetes
 * Linux (RHEL)
