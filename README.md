@@ -132,21 +132,6 @@ Delete resources:
 kubectl delete -f deployment.yml
 kubectl delete -f service.yml
 ```
-
----
-
-## 📸 Project Screenshots
-
-Add screenshots such as:
-
-* Application Home Page
-* Docker Image Build
-* Running Docker Container
-* Kubernetes Pods
-* Kubernetes Deployment
-* Kubernetes Service
-* Browser Output
-
 ---
 
 ##  Learning Outcomes
@@ -163,5 +148,3 @@ Through this project, I learned:
 * Git & GitHub project management
 
 ---
-
-## ⭐ If you found this project helpful, don't forget to give it a Star!
