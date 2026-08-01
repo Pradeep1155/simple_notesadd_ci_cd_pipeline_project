@@ -1,6 +1,6 @@
-# 📝 Notes App Deployment on Kubernetes
+# #  CI/CD Pipeline for Node.js Notes Application using Jenkins & Kubernetes
 
-## 🚀 Project Overview
+## Project Overview
 
 This project demonstrates how to containerize and deploy a **Node.js Notes Application** on a **Kubernetes cluster**. The application is packaged with Docker,
 deployed using Kubernetes Deployments and Services, and can be accessed through a NodePort Service. This project showcases practical DevOps skills including 
